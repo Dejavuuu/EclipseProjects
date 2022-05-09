@@ -92,4 +92,4 @@ public class Game extends Canvas implements Runnable{ //'Canva' import; 'Game' A
 	}
 
 }
-//already ate
+//get moving
