@@ -1,2 +1,94 @@
 05/10 @ 0206, paused @ 14:39 <https://www.youtube.com/watch?v=0T1U0kbu1Sk>
 
+
+
+
+
+(Copy this)
+
+Problem:
+Application:
+Background:
+Solution:
+
+1
+Problem: On Mac, Red Exclamation mark on Project Folder
+Application: Eclipse on Mac
+Background: Imported remote repo on Github to local mac Eclipse and displayed red exclamation mark. This is because library files got deleted.
+Solution: Mainly this problem occurs because your library files get deleted. The simple way to work your project as it was working previously is 1) Go to Project properties 2) Select java Build Path 3) Remove all library except jre. 4) Now add the same same jar file by clicking "Add external jars". Show activity on this post
+
+2
+Problem: Adding locally hosted code to GitHub
+Application: Eclipse/Github
+Background:If you have existing source code or repositories stored locally on your computer or private network you can add them to GitHub by typing commands in a terminal. You can do this by typing Git commands directly
+Solution: Create a new repository on GitHub.com. To avoid errors, do not initialize the new repository with README, license, or gitignore files. You can add these files after your project has been pushed to GitHub.
+-Steps-
+(1) Change the current working directory to your local project.
+
+(2) Initialize the local directory as a Git repository.
+$ git init -b main
+
+(3)Add the files in your new local repository. This stages them for the first commit.
+$ git add .
+# Adds the files in the local repository and stages them for commit. To unstage a file, use 'git reset HEAD YOUR-FILE'.
+
+(4) Commit the files that you've staged in your local repository.
+$ git commit -m "First commit"
+# Commits the tracked changes and prepares them to be pushed to a remote repository. To remove this commit and modify the file, use 'git reset --soft HEAD~1' and commit and add the file again.
+
+(5) At the top of your repository on GitHub.com's Quick Setup page, click  to copy the remote repository URL.
+
+(6) Copy remote repository URL field;
+In the Command prompt, add the URL for the remote repository where your local repository will be pushed.
+$ git remote add origin  <REMOTE_URL> 
+# Sets the new remote
+$ git remote -v
+# Verifies the new remote URL
+Push the changes in your local repository to GitHub.com.
+$ git push origin main
+# Pushes the changes in your local repository up to the remote repository you specified as the origin
+
+3
+Problem: How to Add a New Remote to your Git Repo
+Application:Github/Eclipse
+Background:
+Solution:To add a new remote, use the git remote add command on the terminal, in the directory your repository is stored at. 
+-Steps-
+(1) #set a new remote
+
+git remote add my_awesome_new_remote_repo git@git.assembla.com:portfolio/space.space_name.git
+
+
+(2) #Verify new remote
+
+git remote -v
+
+4
+Problem:Find path to $JAVA_HOME for mac default java installation; attach 'jre' to get JRE path
+Application: Terminal
+Background:
+Solution: In terminal> /usr/libexec/java_home
+
+5
+Problem: Red Green Yellow Highlighted text after Coverage>Build>Java App
+Application: Eclipse
+Background: After Project>Coverage As> Java Build: Program builds and source code now formatted w/ RGY highlighted text
+Solution: Window>Show View>Other>Java>Coverage>Select (XX) 'double x' for remove all sessions or (X) 'single x' remove active session
+
+6
+Problem:
+Application:
+Background:
+Solution:
+
+7
+Problem:
+Application:
+Background:
+Solution:
+
+8
+Problem:
+Application:
+Background:
+Solution:

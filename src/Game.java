@@ -14,8 +14,15 @@ public class Game extends Canvas implements Runnable{ //'Canva' import; 'Game' A
 	private Thread thread;
 	private boolean running = false;
 	
+	private Handler handler; 
+	
 	public Game() {
 		new Window(WIDTH, HEIGHT, "Let's Build a Game!", this);
+		
+		handler = new Handler();
+		
+		handler.addObject(new Player(100, 100, ID.Player));
+		handler.addObject(new Player(200, 0, ID.Player));
 	}
 
 	public synchronized void start() {
@@ -66,6 +73,7 @@ public class Game extends Canvas implements Runnable{ //'Canva' import; 'Game' A
 	}
 	
 	private void tick() {
+		handler.tick();
 		
 	}
 	
@@ -78,8 +86,10 @@ public class Game extends Canvas implements Runnable{ //'Canva' import; 'Game' A
 		
 		Graphics g = bs.getDrawGraphics();
 		
-		g.setColor(Color.green);
+		g.setColor(Color.black);
 		g.fillRect(0,  0, WIDTH, HEIGHT);
+		
+		handler.render(g);
 		
 		g.dispose();
 		bs.show();

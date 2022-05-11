@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Player extends GameObject{ //add unimplement methods from r.click Player
@@ -16,6 +17,8 @@ public class Player extends GameObject{ //add unimplement methods from r.click P
 	@Override
 	public void render(Graphics g) {
 		// TODO Auto-generated method stub
+		g.setColor(Color.white);
+		g.fillRect(x,y,32,32);
 		
 	}
 	
